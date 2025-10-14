@@ -1,7 +1,7 @@
-# cs-2-cheat-gamma
+# ❇️ cs-2-cheat-gamma ❇️
 So this is an external hack to cs 2, which uses python and nim build with pymeow and many other repositories
 ## created by Eliran Perets 
-<details closed><summary> included files - structure: </summary>
+<details closed><summary> 📖 included files - structure: </summary>
 │   client.py
         
 │   Entity.py
@@ -179,13 +179,13 @@ So this is an external hack to cs 2, which uses python and nim build with pymeow
         pyM.zip
 </details>
 
-## So how to use it?
-### Make sure the offsets are up to date, can be updated by:
+## 🤔 So how to use it?
+### 🤞 Make sure the offsets are up to date, can be updated by:
 
 1. run the game CS2.exe
 2. run `update offsets` shortcut
    
-### So how to set it up?
+### ⚙️ So how to set it up?
 
 1. change the ip in `ip_update.py` to the ip you will be using as a server
 2. on the server create a `database` folder in `/home/{user}`
@@ -202,7 +202,7 @@ So this is an external hack to cs 2, which uses python and nim build with pymeow
    nohup python3 /home/{username}/database/asusdb.py > /home/{username}/database/log.log 2>&1 &
    ```
 
-### How to run it after setting it up? 
+### ▶️ How to run it after setting it up? 
 
 1. go to the `{ip adress}:2096/add_profile` and create an account for yourself
 2. go to the `{ip adress}:2096` via google and log in to your account
