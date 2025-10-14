@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Screen</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #121212; /* Dark background */
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #e0e0e0; /* Light text color */
+        }
+        .login-container {
+            background-color: #1e1e1e; /* Dark container background */
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Slightly darker shadow */
+            width: 300px;
+            text-align: center;
+        }
+        .login-container h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #ffffff; /* Light heading color */
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #555555; /* Darker border */
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: #2c2c2c; /* Darker input background */
+            color: #e0e0e0; /* Light input text color */
+        }
+        .login-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff; /* Blue submit button */
+            border: none;
+            border-radius: 4px;
+            color: #ffffff; /* White text */
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login-container input[type="submit"]:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <input type="text" id="username" name="username" placeholder="Username" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const response = await fetch('/check_login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name: username, password: password })
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                console.log(result);
+                window.location.href = '/account';
+            } else {
+                alert('Login failed: ' + result.error);
+		window.location.href = '/market';
+            }
+        });
+    </script>
+</body>
+</html>
