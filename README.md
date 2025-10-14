@@ -203,7 +203,8 @@ So this is an external hack to cs 2, which uses python and nim build with pymeow
    ```
 
 ### How to run it after setting it up? 
-1.go to the `{ip adress}:2096/add_profile` and create an account for yourself
+
+1. go to the `{ip adress}:2096/add_profile` and create an account for yourself
 2. go to the `{ip adress}:2096` via google and log in to your account
 3. download the file `NightMatch.exe`
 4. run it
